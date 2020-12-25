@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Book List</title>
+</head>
+<body>
+    
+    <div class="container mt-5">
+        <h1 class="h1 text-center"><i class="fas fa-book"></i> Book List</h1>
+        <form id="book-form" autocomplete="off">
+            <fieldset>
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" class="form-control" placeholder="Enter book title">
+                </div>
+                <div class="form-group">
+                    <label for="author">Author</label>
+                    <input type="text" id="author" class="form-control" placeholder="Enter book author">
+                </div>
+                <div class="form-group">
+                    <label for="isbn">ISBN#</label>
+                    <input type="text" id="isbn" class="form-control" placeholder="Enter the ISBN number">
+                </div>
+            </fieldset>
+            <button type="submit" class="btn btn-primary btn-block mt-3">Add Book</button>
+        </form>
+
+        
+
+        <table class="table table-hover table-stiped mt-5">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">ISBN</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="book-list"></tbody>
+        </table>
+        
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+</html>

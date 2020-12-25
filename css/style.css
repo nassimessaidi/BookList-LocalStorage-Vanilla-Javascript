@@ -1,0 +1,30 @@
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+}
+
+.container h1 {
+    font-family: raleway, sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #1a1a1a;
+}
+
+.container h1 .fa-book {
+    font-size: 2.7rem;
+    color: #0277bd;
+}
+
+/*
+.container .fa-times {
+    width: ;
+}
+*/
+
+label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+

@@ -10,20 +10,8 @@ class Book {
 // UI Class: Hnadle UI Tasks
 class UI {
     static displayBooks() {
-        const StoredBooks = [
-            {
-                title: 'Book One',
-                author: 'John Doe',
-                isbn: '3434541'
-            },
-            {
-                title: 'Book two',
-                author: 'Jane Ma',
-                isbn: '1294231'
-            }
-        ];
-
-        const books = StoredBooks;
+        
+        const books = Store.getBooks();
 
         books.forEach((book) => UI.addBookToList(book));
     }
@@ -65,8 +53,6 @@ class UI {
     static deleteBook(elem) {
         if(elem.classList.contains('delete')) {
             elem.parentElement.parentElement.remove();
-            // Show deleted massage
-            UI.showAlerts('Book Removed', 'info')
         }
     }
 }
@@ -96,7 +82,7 @@ class Store {
         const books = Store.getBooks();
 
         books.forEach((book, index) => {
-            if(books.isbn === isbn) {
+            if(book.isbn === isbn) {
                 books.splice(index, 1);
             }
         });
@@ -130,6 +116,9 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
         // Add book to UI
         UI.addBookToList(book);
 
+        // Add book to Store
+        Store.addBook(book);
+
         // Clear fields
         UI.clearFields();
 
@@ -144,6 +133,14 @@ document.querySelector('#book-form').addEventListener('submit', (e) => {
 
 // Event: Remove a Book
 document.querySelector('#book-list').addEventListener('click', (e) => {
+    // Remove book from UI
     UI.deleteBook(e.target);
-    //console.log(e.target)
+    console.log(e.target);
+
+    // Remove book from the Store
+    Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+  
+    
+    // Show deleted massage
+    UI.showAlerts('Book Removed', 'info');
 });
